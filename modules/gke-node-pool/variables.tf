@@ -47,6 +47,18 @@ variable "max_node_count" {
   default     = 1
 }
 
+variable "node_locations" {
+  type        = list(string)
+  description = "The locations (zones) for the nodes"
+  default     = null 
+}
+
+variable "disk_size_gb" {
+  type        = number
+  description = "The size of the disk in GB attached to each node"
+  default     = 100
+}
+
 variable "gpu" {
   type = object(
     {

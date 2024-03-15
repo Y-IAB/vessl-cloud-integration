@@ -8,6 +8,7 @@ data "google_container_engine_versions" "gke_version" {
 resource "google_container_node_pool" "this" {
   project  = var.gcp_project_id
   location = var.location
+  node_locations = var.node_locations
 
   name    = var.name
   cluster = var.cluster_name
@@ -17,6 +18,7 @@ resource "google_container_node_pool" "this" {
     preemptible  = var.preemptible
     machine_type = var.machine_type
     image_type   = "COS_CONTAINERD"
+    disk_size_gb = var.disk_size_gb
 
     gcfs_config {
       enabled = true
@@ -44,6 +46,9 @@ resource "google_container_node_pool" "this" {
         count              = var.gpu.count
         gpu_partition_size = null
         gpu_sharing_config = null
+        gpu_driver_installation_config = [{
+          gpu_driver_version = "LATEST"
+        }]
       }
     ]
   }

@@ -5,13 +5,15 @@ data "google_container_engine_versions" "gke_version" {
 }
 
 resource "google_container_cluster" "this" {
-  network  = var.vpc_network_name
-  name     = var.cluster_name
-  location = var.location
+  network        = var.vpc_network_name
+  name           = var.cluster_name
+  location       = var.location
+  node_locations = var.node_locations
 
   min_master_version       = data.google_container_engine_versions.gke_version.latest_master_version
   initial_node_count       = 1
   remove_default_node_pool = true
+  deletion_protection      = false
 
   master_auth {
     client_certificate_config {
