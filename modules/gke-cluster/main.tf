@@ -29,6 +29,4 @@ resource "google_container_cluster" "this" {
       enabled = true
     }
   }
-
-  logging_service = "none"
 }
