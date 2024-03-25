@@ -29,6 +29,12 @@ variable "preemptible" {
   default     = false
 }
 
+variable "spot" {
+  type        = bool
+  description = "Whether to use spot nodes"
+  default     = false
+}
+
 variable "machine_type" {
   type        = string
   description = "The machine type to use for the nodes"

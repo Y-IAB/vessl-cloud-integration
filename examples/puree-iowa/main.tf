@@ -64,6 +64,7 @@ module "gke_node_pool_a100_40g_1" {
   cluster_name    = module.gke_cluster.cluster_name
   cluster_version = var.cluster_version
 
+  spot           = true
   machine_type   = "a2-highgpu-1g"
   disk_size_gb   = 1000
   min_node_count = 0
@@ -86,6 +87,7 @@ module "gke_node_pool_a100_40g_2" {
   cluster_name    = module.gke_cluster.cluster_name
   cluster_version = var.cluster_version
 
+  spot           = true
   machine_type   = "a2-highgpu-2g"
   disk_size_gb   = 1000
   min_node_count = 0
@@ -108,6 +110,7 @@ module "gke_node_pool_a100_40g_4" {
   cluster_name    = module.gke_cluster.cluster_name
   cluster_version = var.cluster_version
 
+  spot           = true
   machine_type   = "a2-highgpu-4g"
   disk_size_gb   = 2000
   min_node_count = 0
@@ -130,6 +133,7 @@ module "gke_node_pool_a100_40g_8" {
   cluster_name    = module.gke_cluster.cluster_name
   cluster_version = var.cluster_version
   
+  spot           = true
   machine_type   = "a2-highgpu-8g"
   disk_size_gb   = 5000
   min_node_count = 0
@@ -152,6 +156,7 @@ module "gke_node_pool_a100_40g_16" {
   cluster_name    = module.gke_cluster.cluster_name
   cluster_version = var.cluster_version
 
+  spot           = true
   machine_type   = "a2-megagpu-16g"
   disk_size_gb   = 5000
   min_node_count = 0
@@ -174,6 +179,7 @@ module "gke_node_pool_h100_80g_8" {
   cluster_name    = module.gke_cluster.cluster_name
   cluster_version = var.cluster_version
 
+  spot           = true
   machine_type   = "a3-highgpu-8g"
   disk_size_gb   = 5000
   min_node_count = 0
@@ -192,12 +198,13 @@ module "gke_node_pool_a100_80g_1" {
   location       = var.region
   node_locations = var.node_locations
 
+  spot            = true
   name            = "node-pool-a100-80g-1"
   cluster_name    = module.gke_cluster.cluster_name
   cluster_version = var.cluster_version
 
   machine_type   = "a2-ultragpu-1g"
-  disk_size_gb   = 5000
+  disk_size_gb   = 1000
   min_node_count = 0
   max_node_count = 5
   gpu = {
@@ -218,6 +225,7 @@ module "gke_node_pool_a100_80g_2" {
   cluster_name    = module.gke_cluster.cluster_name
   cluster_version = var.cluster_version
 
+  spot            = true
   machine_type   = "a2-ultragpu-2g"
   disk_size_gb   = 1000
   min_node_count = 0
@@ -241,6 +249,7 @@ module "gke_node_pool_a100_80g_4" {
   cluster_name    = module.gke_cluster.cluster_name
   cluster_version = var.cluster_version
 
+  spot           = true
   machine_type   = "a2-ultragpu-4g"
   disk_size_gb   = 2000
   min_node_count = 0
@@ -263,6 +272,7 @@ module "gke_node_pool_a100_80g_8" {
   cluster_name    = module.gke_cluster.cluster_name
   cluster_version = var.cluster_version
 
+  spot           = true
   machine_type   = "a2-ultragpu-8g"
   disk_size_gb   = 5000
   min_node_count = 0

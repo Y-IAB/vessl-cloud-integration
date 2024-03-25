@@ -16,6 +16,7 @@ resource "google_container_node_pool" "this" {
 
   node_config {
     preemptible  = var.preemptible
+    spot         = var.spot
     machine_type = var.machine_type
     image_type   = "COS_CONTAINERD"
     disk_size_gb = var.disk_size_gb
